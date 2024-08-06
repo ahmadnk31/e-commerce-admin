@@ -16,6 +16,8 @@ interface ProductClientProps {
 
 
 export function ProductClient({data}:ProductClientProps){
+    const router=useRouter();
+    const params=useParams()
     const [mounted,setMounted]=React.useState(false)
     React.useEffect(()=>{
         setMounted(true)
@@ -23,8 +25,7 @@ export function ProductClient({data}:ProductClientProps){
     if(!mounted){
         return null
     }
-    const router=useRouter();
-    const params=useParams()
+    
     return(
         <>
         <div className="flex items-center justify-between">
